@@ -10,6 +10,10 @@
     cookie.setMaxAge(60*60*24);
     response.addCookie(cookie);
 %>
+request.getSession()invalidate();
+HttpSession actualSession=request.getSession();
+actualSession,setAttribute("userId",123456);
+<a href="session.jsp" method="post"></a></br>
 <form action="search.jsp" method="post">
 <label>Szukane słowo: <input type="text" name="query"/><label><br/>
 <label>Strona nr: <input type="text" name="page"/></label><br/>
