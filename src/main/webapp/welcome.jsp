@@ -5,7 +5,12 @@
 <title>Formularz</title>
 </head>
 <body>
-<form action="search.jsp" method="get">
+    <%
+    Cookie cookie = new Cookie("searchID", String.valueOf(123456));
+    cookie.setMaxAge(60*60*24);
+    response.addCookie(cookie);
+%>
+<form action="search.jsp" method="post">
 <label>Szukane słowo: <input type="text" name="query"/><label><br/>
 <label>Strona nr: <input type="text" name="page"/></label><br/>
 <label>Sortowanie:
@@ -14,7 +19,8 @@
 <option value="desc">malejaco</option>
 </select>
 </label><br/>
-<input type="submit" value="Wyślij"/>
+
+    <input type="submit" value="Wyślij"/>
 <form>
 <body/>
 
